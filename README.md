@@ -1,4 +1,4 @@
-*ipynb2viewer*
+##ipynb2viewer
 
 
 Post IPython notebook files to nbviewer. IPython notebook content will be posted to gist.github.com.
