@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Upload `.ipynb` files in the current directory to gist.github.com as anonymous user and returns nbviewr url.
+Upload `.ipynb` files  to gist.github.com as anonymous user and returns nbviewr url.
 
 Usage:
   ipynb2viewer all <path>
