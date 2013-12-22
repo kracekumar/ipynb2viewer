@@ -11,18 +11,18 @@ Usage
 -----
 Upload all ipynb files in the given path to gist.github.com and return nbviewer urls.
 
-- ipynb2viewer all <path>
+- `ipynb2viewer all <path>`
 
 Upload mentioned file to gist.github.com and return nbviewer url.
 
-- ipynb2viewer file <filename>
+- `ipynb2viewer file <filename>`
 
 Upload mentioned file to gist.github.com and open nbviewer url in webbrowser.
 
-- ipynb2viewer file <filename> --open
+- `ipynb2viewer file <filename> --open`
 
 Upload all ipynb files in the given path to gist.github.com and open nbviewer urls in webbrowser.
 
-- ipynb2viewer all <path> --open
+- `ipynb2viewer all <path> --open`
 
 - Free software: BSD license
