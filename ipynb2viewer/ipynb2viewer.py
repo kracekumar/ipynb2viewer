@@ -7,7 +7,9 @@ Upload `.ipynb` files  to gist.github.com as anonymous user and returns nbviewr 
 Usage:
   ipynb2viewer all <path>
   ipynb2viewer file <filename>
+  ipynb2viewer file <filename> --private
   ipynb2viewer file <filename> --open
+  ipynb2viewer file <filename> --open --private
   ipynb2viewer all <path> --open
 
 Arguments:
@@ -34,7 +36,7 @@ def get_all_ipynb_files(path):
     return [filename for filename in os.listdir(path) if filename.endswith('.ipynb')]
 
 
-def upload_file_to_gist(filename, path=None):
+def upload_file_to_gist(filename, path=None, public=True):
     if path:
         full_path = os.path.join(path, filename)
     else:
@@ -42,7 +44,9 @@ def upload_file_to_gist(filename, path=None):
 
     data = json.dumps(
         {'files':
-            {'{}'.format(filename.replace('/', '_')): {'content': "".join(open(full_path).readlines())}}, 'public': True}
+            {'{}'.format(filename.replace('/', '_')):
+             {'content': "".join(open(full_path).readlines())}},
+         'public': public}
     )
     r = requests.post("https://api.github.com/gists", data=data)
     return r.json()
@@ -57,7 +61,9 @@ def create_nbviewer_url(gist_url):
 
 
 def create_and_upload_to_nbviewer(arguments, filename, path=None):
-    details = upload_file_to_gist(filename, path)
+    # If private is present, make public as False
+    public = not arguments.get('--private')
+    details = upload_file_to_gist(filename, path, public=public)
     gist_url = details.get('html_url')
     sys.stdout.write("Uploaded {} file to gist {}\n".format(filename, gist_url))
     nbviewer_url = create_nbviewer_url(gist_url)
@@ -92,7 +98,7 @@ def file_argument_call(arguments):
 
 
 def main():
-    arguments = docopt(__doc__, argv=sys.argv[1:], help=True, version='0.0.1')
+    arguments = docopt(__doc__, argv=sys.argv[1:], help=True, version='0.0.2')
     try:
         if arguments.get('all'):
             all_argument_call(arguments)

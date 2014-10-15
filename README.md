@@ -13,6 +13,10 @@ Upload all ipynb files in the given path to gist.github.com and return nbviewer 
 
 - `ipynb2viewer all <path>`
 
+Upload all ipynb files in the given path to gist.github.com as private and return nbviewer urls.
+
+- `ipynb2viewer all <path> --private`
+
 Upload mentioned file to gist.github.com and return nbviewer url.
 
 - `ipynb2viewer file <filename>`

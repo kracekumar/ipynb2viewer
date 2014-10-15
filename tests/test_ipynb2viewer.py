@@ -25,6 +25,8 @@ class TestIpynb2viewer(unittest.TestCase):
 Usage:
   ipynb2viewer all
   ipynb2viewer file <filename>
+  ipynb2viewer file <filename> --private
+  ipynb2viewer file <filename> --open --private
   ipynb2viewer file <filename> --open
   ipynb2viewer file <filename> --open --userid <cookie>
   ipynb2viewer all --open
