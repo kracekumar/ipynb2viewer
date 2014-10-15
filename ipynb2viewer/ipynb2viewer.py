@@ -98,7 +98,7 @@ def file_argument_call(arguments):
 
 
 def main():
-    arguments = docopt(__doc__, argv=sys.argv[1:], help=True, version='0.0.2')
+    arguments = docopt(__doc__, argv=sys.argv[1:], help=True, version='0.2.1')
     try:
         if arguments.get('all'):
             all_argument_call(arguments)
