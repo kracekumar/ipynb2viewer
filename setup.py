@@ -19,7 +19,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='ipynb2viewer',
-    version='0.2.1',
+    version='0.2.2',
     description='Post IPython notebook files to nbviewer. IPython notebook content will be posted to gist.github.com.',
     long_description=readme + '\n\n' + history,
     author='kracekumar',
