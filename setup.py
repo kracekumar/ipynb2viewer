@@ -30,7 +30,7 @@ setup(
     ],
     package_dir={'ipynb2viewer': 'ipynb2viewer'},
     include_package_data=True,
-    install_requires=['requests==2.0.1', 'docopt==0.6.1', 'simplejson'
+    install_requires=['requests==2.20.0', 'docopt==0.6.1', 'simplejson'
     ],
     license="BSD",
     zip_safe=False,
